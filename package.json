@@ -1,6 +1,6 @@
 {
-  "name": "nodepbx",
-  "version": "1.0.0",
+  "name": "@encryption/pbx",
+  "version": "0.0.1",
   "description": "",
   "main": "make-call.js",
   "scripts": {

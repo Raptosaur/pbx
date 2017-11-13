@@ -1,16 +1,19 @@
 //Converts sip message to a buffer and sends it to a socket. Resolves once sent
+import { stringify } from './parser';
 
-export default socket => message =>
-  new Promise((resolve, reject) =>
+export default server => (method, data) =>
+  new Promise((resolve, reject) => {
+    let text = stringify(method, data);
+
     server.send(
-      Buffer.from(message),
+      new Buffer(text, 'binary'),
       0,
-      Buffer.byteLength(message),
-      socket.port,
-      socket.address,
-      err => {
-        if (err) return reject(error);
-        resolve();
+      text.length,
+      data.socket.port,
+      data.socket.address,
+      (error, success) => {
+        if (error) return reject(error);
+        resolve(data.message);
       }
-    )
-  );
+    );
+  });

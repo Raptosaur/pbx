@@ -22,11 +22,11 @@ sip.start(
     logger: {
       send: function(message, address) {
         // debugger;
-        util.debug('send\n' + util.inspect(message, false, null));
+        //util.debug('send\n' + util.inspect(message, false, null));
       },
       recv: function(message, address) {
         // debugger;
-        //util.debug('recv\n' + util.inspect(message, false, null));
+        util.debug('recv\n' + util.inspect(message, false, null));
       },
     },
   },

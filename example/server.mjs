@@ -6,6 +6,10 @@ server.use(async request => {
   console.log(request, 'here is sip data');
 });
 
-server.use(async (request, actions) => {
-  await actions.send();
+server.use('REGISTER', async (data, send) => {
+  console.log('register called');
+
+  let message = await send(200, data);
+
+  console.log(message);
 });

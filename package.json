@@ -1,0 +1,14 @@
+{
+  "name": "nodepbx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "make-call.js",
+  "scripts": {
+    "start": "node --experimental-modules example/server.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sip": "0.0.4"
+  }
+}
